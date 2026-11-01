@@ -1,0 +1,1479 @@
+# MARIA — MASTER DESIGN AUDIT & COMPLETE UI/UX RECONSTRUCTION
+## Yhwach-Inspired Art Direction · Quincy Identity · Editorial Typography · Cinematic Motion
+
+## ROLE
+
+Act as a multidisciplinary senior design and engineering team:
+
+- Principal Product Designer
+- Creative Director
+- Senior UX/UI Architect
+- Brand Identity Designer
+- Typography Specialist
+- Motion Graphics Director
+- Frontend Animation Engineer
+- Accessibility Engineer
+- Senior React / Next.js Engineer
+- Design Systems Architect
+
+You are working on the existing MARIA codebase, not building a new project from scratch.
+
+Your responsibility is to conduct a complete design and UX audit, establish a distinctive visual direction, and reconstruct the website's experience around that direction.
+
+The current website is visually unsatisfactory and does not provide the required level of comfort, clarity, usability, or design quality.
+
+Do not approach this as another superficial redesign.
+
+**The objective is to create a genuinely distinctive, professional, comfortable, and technically coherent digital-resource platform.**
+
+---
+
+# 01. CORE CREATIVE DIRECTION
+
+## Main inspiration: Yhwach — BLEACH: Thousand-Year Blood War
+
+Study Yhwach's visual presentation as an art-direction reference.
+
+Focus on the visual principles rather than copying character artwork.
+
+Extract and translate these qualities into MARIA:
+
+**Authority**
+- Monumental composition.
+- Strong visual hierarchy.
+- Confident typography.
+- Deliberate use of scale.
+- Clear visual focal points.
+- Strong structural alignment.
+
+**Composure**
+- Controlled transitions.
+- Restrained animation.
+- Deliberate pacing.
+- Elegant spacing.
+- Minimal unnecessary movement.
+- Visual confidence without excessive decoration.
+
+**Architecture**
+- Geometric symmetry.
+- Precise lines.
+- Strong framing.
+- Monumental editorial layouts.
+- Layered visual depth.
+- Carefully balanced negative space.
+
+**Atmosphere**
+- Deep blacks and charcoal.
+- Restrained bone-white typography.
+- Carefully controlled cool accents.
+- Cinematic lighting.
+- Subtle atmospheric texture.
+- Strong contrast without visual fatigue.
+
+**Typography**
+- Monumental display typography.
+- Elegant serif possibilities.
+- Refined sans-serif interface typography.
+- Technical monospace metadata.
+- Intentional contrast between editorial and functional text.
+
+The result should feel like a carefully designed visual identity inspired by the atmosphere and authority of Yhwach.
+
+It must not look like an anime fan website.
+
+MARIA remains a professional digital-resource platform.
+
+### Intellectual-property restrictions
+
+Do not:
+- Copy official BLEACH logos.
+- Trace official Quincy symbols.
+- Use unlicensed character illustrations.
+- Reproduce screenshots or manga panels.
+- Copy official promotional artwork.
+- Present MARIA as affiliated with BLEACH.
+
+Use original geometry, typography, composition, and motion.
+
+The inspiration is an artistic direction, not a license to reproduce protected assets.
+
+---
+
+# 02. PROJECT AUDIT — USE THE UPLOADED SOURCE CODE
+
+Inspect the actual uploaded project before making changes.
+
+Important existing files include:
+
+### Application structure
+- `app/page.tsx`
+- `app/layout.tsx`
+- `app/globals.css`
+- `app/about/page.tsx`
+- `app/faq/page.tsx`
+- `app/privacy/page.tsx`
+- `app/not-found.tsx`
+
+### Global application shell
+- `components/AppShell.tsx`
+- `components/Navbar.tsx`
+- `components/Sidebar.tsx`
+- `components/Footer.tsx`
+- `components/TransitionLink.tsx`
+- `components/GlobalSearchModal.tsx`
+- `components/ScrollProgress.tsx`
+- `components/SmoothScroll.tsx`
+- `components/CustomCursor.tsx`
+- `components/Intro.tsx`
+
+### Homepage and discovery
+- `components/Hero.tsx`
+- `components/HeroSection.tsx`
+- `components/ScrollChapters.tsx`
+- `components/ResourceDirectory.tsx`
+- `components/ResourceCard.tsx`
+- `components/ResourceModal.tsx`
+- `components/CategoryConstellation.tsx`
+- `components/StarterStacksSection.tsx`
+- `components/WorkflowCollectionsSection.tsx`
+- `components/AiDirectory.tsx`
+- `components/StackBuilderDrawer.tsx`
+- `components/ResourceSubmissionModal.tsx`
+
+### Brand and visual systems
+- `components/MariaLogo.tsx`
+- `components/QuincyEmblem.tsx`
+- `components/MariaFireflyMark.tsx`
+- `components/BrandLogoShowcase.tsx`
+- `components/CinematicBackground.tsx`
+
+### Animation systems
+- `lib/motion/index.ts`
+- `lib/cinematic-motion.ts`
+- `components/Intro.tsx`
+- `components/ScrollChapters.tsx`
+- `components/TransitionLink.tsx`
+
+### Data
+- `data/resources.ts`
+- `data/starter-stacks.ts`
+- `data/workflow-collections.ts`
+- `types/resource.ts`
+
+Inspect the complete component tree, not only these listed files.
+
+Determine which components are actually mounted, which are unused, which duplicate functionality, and which are responsible for the current poor experience.
+
+Do not assume a component is unused simply because it is not imported directly by the homepage. Trace its import relationships.
+
+## Audit report requirements
+
+Identify:
+
+1. Current information architecture.
+2. Current homepage hierarchy.
+3. Navigation problems.
+4. Sidebar problems.
+5. Typography inconsistencies.
+6. Spacing and layout inconsistencies.
+7. Color and contrast problems.
+8. Component duplication.
+9. Excessive visual decoration.
+10. Unnecessary interactions.
+11. Animation conflicts.
+12. Scroll behavior problems.
+13. Mobile usability problems.
+14. Accessibility problems.
+15. Performance risks.
+16. Missing fundamental website components.
+17. Existing components that should be retained.
+18. Existing components that should be redesigned.
+19. Existing components that should be removed.
+
+Do not invent problems. Support findings with actual source references or browser observations.
+
+---
+
+# 03. FULL INSPIRATION RESEARCH
+
+Study every supplied reference.
+
+Do not merely mention these websites in the final report.
+
+Inspect their actual visual presentation, interactions, typography, component patterns, and motion where accessible.
+
+## A. Motion and animation
+
+1. https://animejs.com/
+2. https://www.awwwards.com/websites/anime-js/
+3. https://kexsio.com/animations
+4. https://designspells.com/
+5. https://threeui.com/browse?sort=recent
+
+Study:
+- Timeline sequencing.
+- Scroll-triggered animation.
+- Typography animation.
+- SVG animation.
+- Transition timing.
+- Section entrances.
+- Cursor interactions.
+- Hover feedback.
+- Cinematic reveals.
+- Motion restraint.
+- Responsive behavior.
+
+Extract techniques, not entire website designs.
+
+## B. Typography and visual inspiration
+
+6. https://www.fontshare.com/
+7. https://dribbble.com/search/anime-website
+
+Study:
+- Display font selection.
+- Editorial typography.
+- Font pairing.
+- Optical hierarchy.
+- Kerning.
+- Line length.
+- Weight contrast.
+- Oversized headings.
+- Technical metadata.
+- Responsive typography.
+
+Do not select a font because it is fashionable. Select it because it works with MARIA's identity and reading requirements.
+
+## C. Interface components and design systems
+
+8. https://21st.dev/
+9. https://codefronts.com/
+10. https://reactnativecomponents.com/components
+11. https://quickliquid.vercel.app/
+12. https://glass3d.dev/
+
+Study:
+- Navigation.
+- Sidebars.
+- Search interfaces.
+- Cards.
+- Tabs.
+- Buttons.
+- Modals.
+- Drawers.
+- Footers.
+- Background treatments.
+- Material effects.
+- Responsive component behavior.
+
+QuickLiquid and Glass3D are references for material treatment only. Do not force liquid glass into MARIA's design.
+
+## D. Design details and interaction references
+
+13. https://www.cta.gallery/
+14. https://github.com/Leonxlnx/taste-skill
+15. https://github.com/nutlope/hallmark
+
+Study:
+- CTA hierarchy.
+- Interaction details.
+- Layout quality.
+- Component consistency.
+- Anti-generic design principles.
+- Typography and spacing.
+- Real-world design implementation.
+
+For GitHub repositories, inspect the actual documentation, implementation examples, and license before considering code reuse.
+
+## E. BLEACH visual references
+
+16. https://giphy.com/gifs/ichigo-cour-4-bleach-3LEAvUIdyA8cd6wNzU
+
+17. https://giphy.com/gifs/shinigami-soul-reaper-bleach-thousand-year-blood-war-HdVIVBQ2IgbD1kmTUX
+
+Study the visual atmosphere, composition, lighting, contrast, and movement.
+
+These are visual references, not permission to copy protected artwork.
+
+## Research integrity
+
+For every reference:
+- Record whether it was successfully accessed.
+- Describe the actual useful design qualities observed.
+- Identify which MARIA component could benefit.
+- Explain how the reference should be adapted.
+- Distinguish observed details from assumptions.
+- Do not claim to have inspected inaccessible pages.
+
+Do not reproduce an entire reference design.
+
+MARIA needs its own coherent visual language.
+
+---
+
+# 04. BRAND IDENTITY — MARIA LOGO & QUINCY ZEICHEN
+
+The current source contains:
+
+- `components/MariaLogo.tsx`
+- `components/QuincyEmblem.tsx`
+- A legacy butterfly logo variant.
+
+The desired direction is to replace the butterfly with an original Quincy-inspired emblem where a suitable implementation exists.
+
+### Required decision process
+
+1. Inspect the actual current rendered MARIA logo.
+2. Inspect `MariaLogo.tsx`.
+3. Inspect `QuincyEmblem.tsx`.
+4. Inspect the existing SVG paths and variants.
+5. Evaluate the emblem's originality, visual quality, proportions, and readability.
+6. Determine whether the existing Quincy-inspired emblem is suitable.
+7. If suitable, use it as the primary MARIA symbol.
+8. If unsuitable or unavailable, retain the existing butterfly.
+
+Do not create an unnecessary second logo system.
+
+### Quincy Zeichen direction
+
+The original emblem should use:
+- Five-pointed geometry.
+- Five-directional symmetry.
+- Cross-inspired structural proportions.
+- Precise vector construction.
+- Strong silhouette.
+- Restrained detailing.
+- Good readability at small sizes.
+
+Create or refine these variants:
+- Primary horizontal logo.
+- Compact logo.
+- Symbol-only logo.
+- Monochrome logo.
+- Footer logo.
+- Favicon.
+
+Preserve the exact spelling MARIA.
+
+### Animation
+
+The emblem may have:
+- SVG path drawing.
+- Controlled rotation.
+- Subtle line illumination.
+- Slow geometric transitions.
+- Restrained light movement.
+- Precise entrance animation.
+
+Do not create a 3D logo model.
+
+Do not make the emblem constantly spin.
+
+Do not use excessive glow.
+
+The logo should feel like a designed insignia, not a game badge.
+
+---
+
+# 05. COMPLETE TYPOGRAPHY ARCHITECTURE
+
+Typography must become one of MARIA's strongest design features.
+
+Audit the existing fonts:
+
+- Zodiak.
+- Satoshi.
+- Geist Mono.
+- Shippori Mincho.
+
+Also inspect Fontshare alternatives.
+
+Potential candidates to evaluate:
+- Zodiak.
+- General Sans.
+- Satoshi.
+- Switzer.
+- Cabinet Grotesk.
+- Clash Display.
+- Other suitable Fontshare families.
+
+Do not automatically replace the existing fonts.
+
+Evaluate:
+- Character design.
+- Readability.
+- Font weight range.
+- Variable-font availability.
+- Language coverage.
+- Licensing.
+- Loading performance.
+- Display suitability.
+- Interface suitability.
+
+### Establish a deliberate font hierarchy
+
+**Display typography**
+For:
+- Homepage headline.
+- Major section titles.
+- Editorial statements.
+- Large brand expressions.
+
+**Interface typography**
+For:
+- Navigation.
+- Buttons.
+- Resource names.
+- Cards.
+- Forms.
+- Descriptions.
+- Page headings.
+
+**Monospace typography**
+For:
+- Metadata.
+- Resource identifiers.
+- Technical labels.
+- Keyboard shortcuts.
+- Small technical information.
+
+Use no more than two primary font families plus a justified technical monospace family.
+
+### Typography scale
+
+Define:
+- Display XL.
+- Display Large.
+- H1.
+- H2.
+- H3.
+- H4.
+- Body Large.
+- Body.
+- Body Small.
+- Caption.
+- Eyebrow.
+- Metadata.
+- Navigation.
+- Button.
+- Input.
+
+Define:
+- Font sizes.
+- Line heights.
+- Weights.
+- Letter spacing.
+- Maximum text widths.
+- Responsive behavior.
+
+Use fluid typography where appropriate.
+
+Correct any conflicting or recursive CSS font-variable definitions.
+
+Ensure the typography system is centralized and consistently applied.
+
+Do not use excessively small text to imitate a technical interface.
+
+Readability takes priority.
+
+---
+
+# 06. VISUAL DESIGN SYSTEM
+
+Establish a complete design system before applying isolated component styles.
+
+### Color direction
+
+Build a controlled palette inspired by the visual atmosphere of the references.
+
+Starting direction:
+- Deep black.
+- Charcoal.
+- Dark graphite.
+- Bone white.
+- Muted silver.
+- Restrained cold blue.
+- Carefully selected secondary accent.
+
+Do not assume every color in the existing theme is correct.
+
+Define actual tokens for:
+- Page background.
+- Surface.
+- Elevated surface.
+- Borders.
+- Primary text.
+- Secondary text.
+- Muted text.
+- Accent.
+- Interactive states.
+- Focus states.
+- Error.
+- Success.
+- Warning.
+
+Maintain adequate contrast.
+
+### Spacing
+
+Establish a coherent spacing scale.
+
+Define:
+- Global page gutters.
+- Section spacing.
+- Container widths.
+- Card padding.
+- Navigation spacing.
+- Sidebar spacing.
+- Text spacing.
+- Form spacing.
+- Mobile spacing.
+
+### Shape language
+
+Use a deliberate balance of:
+- Sharp geometric edges.
+- Controlled corner radii.
+- Fine borders.
+- Architectural framing.
+- Editorial separators.
+
+Do not make every component a rounded card.
+
+### Backgrounds
+
+Use atmospheric depth carefully:
+- Controlled gradients.
+- Subtle grain.
+- Fine texture.
+- Restrained light.
+- Layered shadows.
+- Optional SVG or CSS-generated visual detail.
+
+Avoid:
+- Random particles.
+- Random stars.
+- Excessive glassmorphism.
+- Repetitive gradient backgrounds.
+- Unnecessary glowing panels.
+
+Every decorative element must support the composition.
+
+---
+
+# 07. HOMEPAGE — COMPLETE RECONSTRUCTION
+
+The homepage must explain MARIA immediately and provide a comfortable path to discovering resources.
+
+Do not push the actual resource discovery experience unnecessarily far down the page.
+
+Create a clear hierarchy.
+
+## Section 1 — Navigation
+
+Design a precise, premium navigation system.
+
+Include only real, useful destinations and actions.
+
+Potential structure:
+- MARIA logo.
+- Discover.
+- Categories.
+- Collections.
+- AI Resources.
+- About.
+- Search.
+- Saved resources, if functional.
+- Primary submission action, if appropriate.
+
+Do not force every destination into the top navigation.
+
+Keep the header visually controlled.
+
+## Section 2 — Hero
+
+Create a distinctive hero with strong typography and an intentional visual composition.
+
+Suggested headline:
+
+"Find the tools that move your work forward."
+
+Alternative:
+
+"A better starting point for digital creation."
+
+Supporting text:
+
+"Explore a curated library of digital resources for development, design, AI, and creative work."
+
+Primary action:
+"Explore resources"
+
+Secondary action:
+"Browse categories"
+
+The hero should establish the brand identity without becoming a poster or anime fan page.
+
+Use the original Quincy-inspired emblem or retain the butterfly if the emblem does not meet the quality requirements.
+
+If the supplied GIF background is still part of the intended design, inspect and integrate the exact existing asset from `CinematicBackground.tsx` where appropriate. Do not add a competing background system.
+
+## Section 3 — Search
+
+Make resource search immediately accessible.
+
+Requirements:
+- Functional search.
+- Clear input label.
+- Search guidance.
+- Keyboard accessibility.
+- Visible focus.
+- Clear action to reset.
+- Existing real search behavior.
+- Responsive layout.
+
+Do not create fake AI search or fake autocomplete.
+
+## Section 4 — Category discovery
+
+Present the actual MARIA categories.
+
+Use:
+- Clear category labels.
+- Short descriptions based on actual taxonomy.
+- Real resource counts.
+- Direct navigation to filtered results.
+
+Avoid abstract labels that users cannot understand.
+
+## Section 5 — Featured resources
+
+Use actual catalogue records only.
+
+Show:
+- Resource name.
+- Useful description.
+- Category.
+- Pricing status, only when supported.
+- Open-source status, only when supported.
+- Official destination.
+
+Do not fabricate popularity, ratings, recommendations, or verification.
+
+## Section 6 — Starter stacks and workflows
+
+Explain the practical value of existing collections.
+
+Allow users to inspect real resources and apply existing presets.
+
+Do not duplicate the same information across multiple sections.
+
+## Section 7 — Additional tools
+
+Expose useful existing destinations:
+- AI directory.
+- Creator utilities.
+- API resources.
+- Other existing functional tools.
+
+Do not force all of these into the homepage.
+
+## Section 8 — Submission CTA
+
+Provide a clear way to submit a resource if the submission feature is functional.
+
+Explain the purpose accurately.
+
+Do not promise automatic approval or verification.
+
+## Section 9 — Footer
+
+Create a deliberate, complete footer.
+
+Use real destinations:
+- Discover.
+- Categories.
+- Collections.
+- About.
+- FAQ.
+- Privacy.
+- Resource submission, where functional.
+
+Include actual brand identity and concise supporting information.
+
+Do not invent company information, social accounts, or legal claims.
+
+---
+
+# 08. WEBSITE INFORMATION ARCHITECTURE
+
+Reassess the current information architecture.
+
+The current homepage has a complex workspace structure with tabs such as:
+- Catalog Registry.
+- Neural Allowance.
+- Starter Stacks.
+- Discipline Metaphors.
+- 3D Category Galaxy.
+
+These labels and structures must be evaluated against actual user needs.
+
+Use direct, understandable names.
+
+Potential navigation architecture:
+
+**Discover**
+- All resources.
+- Categories.
+- Search.
+
+**Collections**
+- Starter stacks.
+- Workflow collections.
+
+**Tools**
+- AI resources.
+- Creator utilities.
+- API directory.
+
+**Library**
+- Saved resources.
+- Recently viewed, only if genuinely supported.
+
+**Information**
+- About.
+- FAQ.
+- Privacy.
+
+This is a proposal, not permission to create fake routes.
+
+Only expose destinations that actually exist or can be implemented using existing functionality.
+
+Do not create navigation items that lead nowhere.
+
+Do not create unnecessary page depth.
+
+---
+
+# 09. SIDEBAR DESIGN
+
+Completely audit and refine the sidebar.
+
+The sidebar should support discovery, not dominate the interface.
+
+### Desktop
+
+Consider:
+- Clear category groups.
+- Simple labels.
+- Actual resource counts.
+- Active category indication.
+- Collapsible behavior only if useful.
+- Consistent iconography.
+- Appropriate content spacing.
+
+Avoid:
+- Too many nested groups.
+- Unnecessary icons.
+- Excessive badges.
+- Fake counters.
+- Overly narrow text.
+- Confusing category terminology.
+
+### Mobile
+
+Use a dedicated mobile interaction.
+
+Requirements:
+- Clear open/close action.
+- Appropriate overlay.
+- Escape-key dismissal.
+- Focus management.
+- Scroll behavior.
+- Touch-friendly controls.
+- No content overflow.
+- No desktop sidebar compressed into a mobile layout.
+
+### Active states
+
+Use clear but restrained visual emphasis.
+
+Do not rely only on color to communicate selection.
+
+---
+
+# 10. RESOURCE DIRECTORY AND ESSENTIAL COMPONENTS
+
+The resource directory is the core product.
+
+It must be easier to understand and use than the current experience.
+
+Audit and refine:
+
+### Search
+- Search input.
+- Search results.
+- Clear button.
+- Empty state.
+- Keyboard support.
+
+### Filters
+- Categories.
+- Subcategories.
+- Open-source status.
+- Other filters only when supported by real fields.
+
+### Sorting
+- Only actual available sorting fields.
+- No invented popularity or ranking.
+
+### Resource cards
+
+Each card should present information in a predictable hierarchy.
+
+Potential structure:
+- Resource name.
+- Short description.
+- Category.
+- Pricing information, if supported.
+- Open-source information, if supported.
+- Save action.
+- Details action.
+- Official external destination.
+
+### Resource details
+
+Include actual information:
+- Name.
+- Description.
+- Category.
+- Official URL.
+- Pricing.
+- License or open-source details where supported.
+- Relevant metadata.
+
+### Other necessary interface states
+
+Implement or refine:
+- Loading state.
+- Skeleton state.
+- Empty state.
+- Error state.
+- No search results.
+- No saved resources.
+- Active filter state.
+- Disabled state.
+- Success feedback.
+- Error feedback.
+
+Do not add a loading animation when no loading operation exists.
+
+Do not invent data to fill empty sections.
+
+---
+
+# 11. MOTION GRAPHICS — NO 3D MODELS
+
+This requirement overrides earlier Three.js visual directions.
+
+**MARIA must not use 3D models or 3D object scenes.**
+
+Remove the solar-system presentation from the user experience.
+
+Remove the 3D category galaxy interface.
+
+Remove the 3D resource-core model from the hero.
+
+Do not replace them with other 3D models.
+
+Do not introduce a new Three.js scene.
+
+### What is allowed
+
+Use sophisticated 2D and 2.5D motion graphics:
+
+- SVG path animation.
+- CSS perspective.
+- Layered parallax.
+- Animated geometric lines.
+- Dimensional typography.
+- Mask reveals.
+- Clip-path transitions.
+- Controlled depth transforms.
+- Gradient light movement.
+- Animated borders.
+- Subtle atmospheric distortion where performant.
+- Canvas 2D effects.
+- Pointer-responsive lighting.
+- Layered shadow transitions.
+
+The goal is a dimensional visual experience without 3D object models.
+
+### Existing Three.js systems
+
+Inspect:
+- `Hero3DCanvas.tsx`
+- `MariaWordGalaxy3D.tsx`
+
+Remove their visual presentation and dependencies from the active experience.
+
+Do not leave inaccessible, expensive WebGL scenes running in the background.
+
+Before deleting source files or removing the Three.js dependency:
+1. Trace every import.
+2. Identify all consumers.
+3. Check whether any non-3D functionality depends on them.
+4. Remove or refactor the affected integrations safely.
+5. Remove unused code and dependencies only after confirming they are no longer needed.
+
+Preserve resource categories and filtering functionality.
+
+Do not preserve the solar-system UI merely to avoid refactoring.
+
+---
+
+# 12. ANIMATION ARCHITECTURE
+
+Audit the existing animation stack.
+
+Current dependencies include:
+- Anime.js.
+- Motion.
+- Lenis.
+
+Current components include:
+- Intro.
+- CustomCursor.
+- ScrollProgress.
+- SmoothScroll.
+- ScrollChapters.
+- TransitionLink.
+
+Determine which systems provide genuine value and which make the website uncomfortable.
+
+Avoid overlapping animation libraries.
+
+### Anime.js
+
+Use Anime.js where timeline orchestration provides meaningful value.
+
+Official reference:
+https://animejs.com/
+
+Suitable applications:
+- Hero entrance.
+- Quincy emblem animation.
+- SVG line drawing.
+- Controlled section choreography.
+- Carefully selected typography effects.
+
+Do not use Anime.js for every button and hover transition.
+
+### CSS
+
+Prefer CSS for:
+- Hover feedback.
+- Focus transitions.
+- Simple fades.
+- Underlines.
+- Basic transforms.
+- Borders.
+- Simple overlays.
+
+### Motion
+
+Retain or use Motion only when it provides a clear advantage over existing CSS or Anime.js implementations.
+
+Do not add more animation dependencies.
+
+### Scroll effects
+
+Design a deliberate scroll system.
+
+Possible effects:
+- Section reveals.
+- Sticky editorial headings.
+- Controlled image or background movement.
+- Text transitions.
+- Section progress.
+- Subtle parallax.
+
+Avoid:
+- Scroll hijacking.
+- Excessive pinning.
+- Horizontal scroll sections without a strong reason.
+- Long scroll chapters.
+- Content hidden until animation triggers.
+- Repeated animations on every scroll.
+- Unnecessary scroll smoothing.
+- Delayed access to important content.
+
+The page should remain comfortable when scrolling normally.
+
+### Transitions
+
+Define consistent:
+- Duration.
+- Easing.
+- Displacement.
+- Stagger.
+- Entrance behavior.
+- Exit behavior.
+- Reduced-motion behavior.
+
+Keep transitions intentional and fast enough for daily use.
+
+---
+
+# 13. CURSOR AND MICROINTERACTIONS
+
+Audit the current custom cursor.
+
+The system must not reduce usability.
+
+A custom cursor is optional, not mandatory.
+
+If retained:
+- Keep the native cursor visible.
+- Restrict it to suitable fine-pointer devices.
+- Disable it for touch.
+- Disable it under reduced motion.
+- Avoid excessive lag.
+- Avoid expensive per-frame React state updates.
+- Avoid interfering with text selection.
+- Avoid interfering with inputs.
+- Avoid interfering with browser accessibility.
+
+Microinteractions should be clear and subtle.
+
+Apply them to:
+- Buttons.
+- Links.
+- Cards.
+- Search.
+- Filters.
+- Navigation.
+- Modals.
+- Drawers.
+
+Do not animate elements simply because they can be animated.
+
+---
+
+# 14. FOOTER DESIGN
+
+The footer must feel like a deliberate conclusion to the page.
+
+Avoid a generic three-column template without a clear hierarchy.
+
+Explore:
+- Editorial footer composition.
+- Strong MARIA identity.
+- Original Quincy emblem or retained butterfly.
+- Carefully arranged navigation.
+- Fine geometric separators.
+- Large but controlled typography.
+- Subtle entrance motion.
+- Clear legal and information links.
+
+Use only actual destinations.
+
+Do not add fake newsletter subscriptions or social links.
+
+The footer should remain easy to navigate and comfortable on mobile.
+
+---
+
+# 15. FUNDAMENTAL WEBSITE COMPONENTS
+
+Conduct a component completeness audit.
+
+The website should have the following fundamentals where relevant:
+
+**Global**
+- Brand logo.
+- Header.
+- Main navigation.
+- Mobile navigation.
+- Footer.
+- Skip-to-content link.
+- Page container.
+- Consistent section system.
+
+**Discovery**
+- Search.
+- Category navigation.
+- Filter controls.
+- Sort controls.
+- Resource count.
+- Resource cards.
+- Resource detail view.
+- Empty state.
+- Loading state.
+- Error state.
+
+**User library**
+- Saved resources.
+- Recently viewed, if supported.
+- Stack builder.
+- Import/export behavior, if supported.
+- Clear-storage controls where appropriate.
+
+**Interaction**
+- Buttons.
+- Links.
+- Inputs.
+- Dropdowns.
+- Tabs.
+- Drawers.
+- Dialogs.
+- Toasts.
+- Tooltips where necessary.
+- Focus indicators.
+
+**Information**
+- About page.
+- FAQ.
+- Privacy page.
+- Not-found page.
+- Error handling.
+
+**Responsive**
+- Desktop layout.
+- Tablet layout.
+- Mobile layout.
+- Touch interactions.
+- Keyboard navigation.
+
+Do not add features simply to complete a checklist.
+
+Every component must have a clear purpose and real behavior.
+
+---
+
+# 16. RESPONSIVE UX
+
+Audit actual layouts at:
+- 320px.
+- 375px.
+- 430px.
+- 768px.
+- 1024px.
+- 1440px.
+- 1920px.
+
+Check:
+- Text wrapping.
+- Heading scale.
+- Horizontal overflow.
+- Navigation.
+- Sidebar.
+- Search.
+- Resource cards.
+- Dialogs.
+- Drawers.
+- Footer.
+- Background composition.
+- Touch targets.
+- Scroll behavior.
+
+Do not simply shrink the desktop interface.
+
+Design mobile layouts intentionally.
+
+---
+
+# 17. ACCESSIBILITY
+
+Maintain:
+- Semantic HTML.
+- Proper heading order.
+- Keyboard accessibility.
+- Visible focus.
+- Accessible labels.
+- Appropriate ARIA only where needed.
+- Contrast.
+- Reduced-motion support.
+- Modal focus management.
+- Escape-key behavior.
+- Touch accessibility.
+- Screen-reader compatibility.
+
+Ensure content remains available without animation.
+
+Do not hide important information behind hover-only interactions.
+
+---
+
+# 18. PERFORMANCE AND ENGINEERING
+
+Preserve the existing Next.js and React architecture unless a change is necessary.
+
+Review:
+- Client component usage.
+- Unnecessary state.
+- Expensive effects.
+- Duplicate event listeners.
+- Animation loops.
+- Large data rendering.
+- Font loading.
+- Image loading.
+- GIF background loading.
+- Scroll observers.
+- Route transitions.
+- WebGL usage.
+
+Do not introduce new dependencies without a specific reason.
+
+Do not invent performance metrics.
+
+Do not remove working application logic to simplify the visual redesign.
+
+Preserve:
+- Resource catalogue.
+- Resource IDs.
+- Official URLs.
+- Saved resources.
+- Starter stacks.
+- Workflow collections.
+- Existing search and filtering.
+- Resource submission behavior.
+- Privacy behavior.
+- Storage schema.
+
+Any data changes require separate justification.
+
+---
+
+# 19. ANTI-GENERIC DESIGN RULES
+
+This is a strict design-quality requirement.
+
+Do not produce:
+- Generic AI SaaS layouts.
+- Generic dashboard templates.
+- Repeated bento grids without purpose.
+- Excessive rounded cards.
+- Random gradients.
+- Random glowing orbs.
+- Excessive glass panels.
+- Fake terminal interfaces.
+- Fake telemetry.
+- Fake resource counts.
+- Fake testimonials.
+- Fake ratings.
+- Fake verification badges.
+- Unnecessary icons.
+- Unnecessary labels.
+- Decorative code snippets.
+- Repetitive section layouts.
+- Excessive animations.
+- Random particles.
+- Unnecessary 3D objects.
+- Anime fan-page styling.
+- Cringe marketing copy.
+- Artificially dramatic descriptions.
+- Unreadable technical typography.
+- Empty visual decoration.
+
+Do not use visual effects to hide weak layout decisions.
+
+Do not use design trends without a reason.
+
+**Every section, component, animation, label, and visual element must justify its existence.**
+
+---
+
+# 20. IMPLEMENTATION STRATEGY
+
+Do not immediately rewrite the entire codebase in one uncontrolled operation.
+
+Use this sequence.
+
+### Stage A — Research and audit
+- Inspect the complete project.
+- Inspect every supplied reference.
+- Map the existing components.
+- Identify actual UX problems.
+- Produce an evidence-based audit.
+- Identify redundant and unnecessary systems.
+
+### Stage B — Design direction
+Establish:
+- Brand direction.
+- Logo decision.
+- Typography.
+- Color tokens.
+- Spacing.
+- Grid.
+- Component shape language.
+- Motion language.
+- Background treatment.
+
+### Stage C — Information architecture
+Define:
+- Homepage structure.
+- Navigation.
+- Sidebar.
+- Directory structure.
+- Collections.
+- Tools.
+- Information pages.
+- Footer.
+
+### Stage D — Core redesign
+Implement:
+- Global shell.
+- Homepage.
+- Navigation.
+- Sidebar.
+- Resource directory.
+- Resource cards.
+- Resource details.
+- Footer.
+
+### Stage E — Motion and interaction
+Implement:
+- Emblem motion.
+- Hero choreography.
+- Section reveals.
+- Scroll transitions.
+- Navigation transitions.
+- Microinteractions.
+- Modal and drawer transitions.
+
+### Stage F — Remove unwanted 3D systems
+- Remove active solar-system presentation.
+- Remove active 3D resource-core presentation.
+- Replace required visual depth with 2D/2.5D motion.
+- Remove unused Three.js integrations and dependencies only after tracing them.
+- Preserve all unrelated functionality.
+
+### Stage G — Validation
+Test the complete experience at real viewport sizes.
+
+---
+
+# 21. REQUIRED VISUAL QUALITY REVIEW
+
+After implementation, inspect the actual rendered website.
+
+Do not rely only on source code.
+
+Review:
+- Full homepage.
+- Header.
+- Hero.
+- Search.
+- Categories.
+- Resource directory.
+- Resource cards.
+- Sidebar.
+- Footer.
+- Mobile navigation.
+- Dialogs.
+- All existing routes.
+
+Capture and compare actual screenshots at desktop and mobile sizes if browser tooling is available.
+
+Look for:
+- Weak visual hierarchy.
+- Awkward spacing.
+- Unbalanced composition.
+- Poor text contrast.
+- Excessive decoration.
+- Inconsistent components.
+- Uncomfortable scrolling.
+- Broken responsive layouts.
+- Animation conflicts.
+
+Make corrections based on actual observations.
+
+Do not claim visual testing was completed if no browser rendering was performed.
+
+---
+
+# 22. FINAL ACCEPTANCE CRITERIA
+
+The redesign is acceptable only if:
+
+- MARIA has a distinctive and coherent visual identity.
+- The design direction is clearly informed by the abstract Yhwach aesthetic.
+- The website does not resemble a generic AI SaaS template.
+- Typography is deliberate and comfortable.
+- The logo decision is based on the actual existing assets.
+- The Quincy-inspired emblem is used if it meets quality standards; otherwise the butterfly remains.
+- The homepage explains MARIA clearly.
+- Search and discovery are immediately accessible.
+- Navigation is understandable.
+- Sidebar behavior is comfortable.
+- Resource cards are readable and useful.
+- Footer structure is complete.
+- All real existing functionality is preserved.
+- No solar-system interface remains.
+- No 3D models or Three.js object scenes remain active.
+- 2D/2.5D motion provides the intended visual depth.
+- Motion is purposeful and restrained.
+- Scroll behavior remains natural.
+- Mobile experience is deliberately designed.
+- Accessibility is maintained.
+- No fake content or functionality is introduced.
+- Actual browser validation is reported honestly.
+
+---
+
+# 23. FINAL REPORT
+
+Provide a structured report containing:
+
+1. Overall UX audit.
+2. Current design problems identified.
+3. Reference research findings.
+4. Final creative direction.
+5. Quincy emblem decision.
+6. Typography system.
+7. Color and spacing system.
+8. Homepage structure.
+9. Navigation architecture.
+10. Sidebar redesign.
+11. Resource discovery redesign.
+12. Footer redesign.
+13. Motion architecture.
+14. Scroll behavior.
+15. 3D systems removed from active experience.
+16. Files modified.
+17. Existing functionality preserved.
+18. Dependencies added or removed.
+19. Responsive validation.
+20. Accessibility validation.
+21. Performance observations.
+22. Actual tests executed.
+23. Remaining issues.
+
+Clearly distinguish:
+- Implemented.
+- Tested.
+- Not tested.
+- Deferred.
+
+Do not invent results.
+
+---
+
+# EXECUTION RULES
+
+- Use the uploaded project as the source of truth.
+- Audit before implementation.
+- Research the supplied references.
+- Do not invent infrastructure.
+- Do not invent features.
+- Do not replace real data with mock data.
+- Do not delete working functionality.
+- Do not introduce unnecessary dependencies.
+- Do not create 3D models.
+- Do not create a solar-system scene.
+- Do not create another generic AI-generated website.
+- Do not deploy or publish.
+- Do not begin another unrelated phase.
+
+**This is a complete design and UX reconstruction of MARIA. The goal is a coherent product experience, not a collection of visual effects. Complete the work, validate it, provide the final report, and stop.**

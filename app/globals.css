@@ -1,0 +1,534 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-ink: #070709;
+  --color-surface: #0E0E14;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-bone: #F5F5F0;
+  --color-ash-400: #A3A39C;
+  --color-ash-600: #54544F;
+  --color-reishi: #8FD3FF;
+  --color-wine: #541C42;
+
+  --font-display: 'Cabinet Grotesk', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-sans: 'Satoshi', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  --ease-yhwach: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-aizen: cubic-bezier(0.45, 0, 0.15, 1);
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --ease-overshoot: cubic-bezier(0.34, 1.4, 0.64, 1);
+
+  --duration-instant: 120ms;
+  --duration-fast: 200ms;
+  --duration-standard: 350ms;
+  --duration-deliberate: 550ms;
+  --duration-cinematic: 850ms;
+
+  --motion-displacement-micro: 2px;
+  --motion-displacement-subtle: 6px;
+  --motion-displacement-standard: 16px;
+  --motion-displacement-monumental: 24px;
+  --motion-displacement-cinematic: 36px;
+}
+
+:root {
+  --font-display: 'Cabinet Grotesk', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-sans: 'Satoshi', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  --color-ink: #070709;
+  --color-surface: #0E0E14;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-bone: #F5F5F0;
+  --color-ash-400: #A3A39C;
+  --color-ash-600: #54544F;
+  --color-reishi: #8FD3FF;
+  --color-wine: #541C42;
+
+  --ease-yhwach: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-aizen: cubic-bezier(0.45, 0, 0.15, 1);
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --ease-overshoot: cubic-bezier(0.34, 1.4, 0.64, 1);
+
+  --duration-instant: 120ms;
+  --duration-fast: 200ms;
+  --duration-standard: 350ms;
+  --duration-deliberate: 550ms;
+  --duration-cinematic: 850ms;
+
+  --motion-displacement-micro: 2px;
+  --motion-displacement-subtle: 6px;
+  --motion-displacement-standard: 16px;
+  --motion-displacement-monumental: 24px;
+  --motion-displacement-cinematic: 36px;
+}
+
+/* ==========================================================================
+   MARIA Centralized Typographic Hierarchy
+   - Display Headings: Cabinet Grotesk (Fontshare) — Architectural, Authoritative, Clear
+   - Interface & Body: Satoshi (Fontshare) — Exceptionally Legible, Open Counters, High Reading Comfort
+   - Technical & Telemetry: Geist Mono / system-mono — Calibrated Tabular Figures & Code
+   ========================================================================== */
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* --- 1. DISPLAY TOKENS --- */
+
+  /* Hero Display: Monumental headline statement (64–80px on desktop) */
+  .type-display-xl,
+  .type-display {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5.5vw, 4.75rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  /* Page Title: Major page headlines (40–48px on desktop) */
+  .type-display-lg,
+  .type-page-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 3.8vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  /* Section Hero Statement: Major topic highlights (32–40px) */
+  .type-display-m {
+    font-family: var(--font-display);
+    font-size: clamp(1.875rem, 2.8vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.018em;
+    text-wrap: balance;
+  }
+
+  /* --- 2. HEADING TOKENS (H1–H6) --- */
+
+  /* Heading 1: Primary page headlines */
+  .type-h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  /* Heading 2: Major section headings (28–36px on desktop) */
+  .type-h2,
+  .type-section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.625rem, 2.4vw, 2.125rem);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  /* Heading 3: Subheadings & section subsections (20–24px) */
+  .type-h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  /* Heading 4: Card titles & structural subheads (17–20px) */
+  .type-h4,
+  .type-card-title,
+  .type-resource-title {
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  /* Heading 5: Drawer group titles & category group dividers (15–16px) */
+  .type-h5 {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+  }
+
+  /* Heading 6: Minor technical block titles (14px) */
+  .type-h6 {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: 0;
+  }
+
+  /* --- 3. BODY PROSE TOKENS --- */
+
+  /* Body XL: Lead intro & thesis statements (18–20px) */
+  .type-body-xl {
+    font-family: var(--font-sans);
+    font-size: clamp(1.125rem, 1.4vw, 1.25rem);
+    font-weight: 400;
+    line-height: 1.65;
+    letter-spacing: -0.008em;
+    color: var(--color-bone, #F5F5F0);
+    max-width: 65ch;
+  }
+
+  /* Body L: Editorial lead paragraphs (17–18px) */
+  .type-body-lg {
+    font-family: var(--font-sans);
+    font-size: clamp(1.0625rem, 1.2vw, 1.125rem);
+    font-weight: 400;
+    line-height: 1.65;
+    letter-spacing: -0.006em;
+    color: #D6D6CF;
+    max-width: 65ch;
+  }
+
+  /* Body M: Standard readable prose (16px) */
+  .type-body-m,
+  .type-body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.65;
+    letter-spacing: -0.004em;
+    color: #B5B5AC;
+    max-width: 65ch;
+  }
+
+  /* Body S / Secondary: Supporting descriptions & card details (14–15px) */
+  .type-body-sm,
+  .type-supporting,
+  .type-secondary,
+  .type-card-desc,
+  .type-resource-desc {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: 0;
+    color: #A3A39C;
+  }
+
+  /* --- 4. INTERFACE TOKENS --- */
+
+  /* Eyebrow / Label: Crisp category markers & section kickers (12px, font-semibold) */
+  .type-eyebrow,
+  .type-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+    color: var(--color-reishi, #8FD3FF);
+  }
+
+  /* Eyebrow Muted: Secondary categorical tags (12px) */
+  .type-eyebrow-muted {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+    color: var(--color-ash-600, #54544F);
+  }
+
+  /* Caption: Footnotes & fine specifications (13px) */
+  .type-caption {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: #94948C;
+  }
+
+  /* Button: Action buttons, CTA labels & filter toggles (14px, readable sentence/title case, NO forced uppercase) */
+  .type-btn,
+  .type-button {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+
+  /* Navigation: Primary header and rail navigation links (14px, comfortable reading) */
+  .type-nav,
+  .type-navigation {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+
+  /* Form Input Text (14px) */
+  .type-input {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+
+  /* --- 5. TECHNICAL & TELEMETRY TOKENS (Strictly Monospace) --- */
+
+  /* Metadata: Tabular monospaced figures, quotas, licenses (12–13px) */
+  .type-meta,
+  .type-metadata {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+    color: #A3A39C;
+  }
+
+  /* Code / Technical Monospace */
+  .type-code {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.45;
+  }
+}
+
+/* ==========================================================================
+   Restrained Glass Surfaces & Architectural Materials (Glass3D & ThreeUI)
+   - Translucent layers over the global animated Yhwach background
+   - Solid #0E0E14 base fallback for rendering stability & WCAG AA contrast
+   - Controlled specular highlights (inset 0 1px 0 rgba(255,255,255,0.06))
+   - Restrained backdrop-filter (blur 10px–16px) with zero layout thrash
+   ========================================================================== */
+.glass-panel {
+  background-color: #0E0E14;
+  background-color: rgba(14, 14, 20, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-card {
+  background-color: #0E0E14;
+  background-color: rgba(14, 14, 20, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.04);
+  transition: border-color var(--duration-fast, 200ms) var(--ease-yhwach, cubic-bezier(0.16, 1, 0.3, 1)),
+              background-color var(--duration-fast, 200ms) var(--ease-yhwach, cubic-bezier(0.16, 1, 0.3, 1)),
+              box-shadow var(--duration-fast, 200ms) var(--ease-yhwach, cubic-bezier(0.16, 1, 0.3, 1)),
+              transform var(--duration-fast, 200ms) var(--ease-yhwach, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.glass-card:hover {
+  background-color: rgba(18, 18, 26, 0.94);
+  border-color: rgba(143, 211, 255, 0.35);
+  box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.65), 0 0 20px -2px rgba(143, 211, 255, 0.08);
+}
+
+.glass-control {
+  background-color: #070709;
+  background-color: rgba(7, 7, 9, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill-active {
+  background-color: rgba(14, 14, 20, 0.95);
+  border-color: rgba(143, 211, 255, 0.5);
+  color: var(--color-bone, #F5F5F0);
+  box-shadow: 0 0 16px -2px rgba(143, 211, 255, 0.18), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-modal {
+  background-color: #0E0E14;
+  background-color: rgba(14, 14, 20, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.85), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Hairline borders & architectural surfaces */
+.border-hairline {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.border-hairline-reishi {
+  border: 1px solid rgba(143, 211, 255, 0.28);
+}
+
+.border-hairline-wine {
+  border: 1px solid rgba(84, 28, 66, 0.28);
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(var(--motion-displacement-subtle, 6px));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-fast, 200ms) var(--ease-yhwach, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+  will-change: opacity, transform;
+}
+
+/* Centralized Scroll Reveal Transition (Compositor-only transform & opacity) */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(var(--motion-displacement-standard, 16px));
+  transition: opacity var(--duration-deliberate, 550ms) var(--ease-yhwach, cubic-bezier(0.16, 1, 0.3, 1)),
+              transform var(--duration-deliberate, 550ms) var(--ease-yhwach, cubic-bezier(0.16, 1, 0.3, 1));
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 1px Hairline Draw Animation */
+.hairline-draw {
+  position: relative;
+}
+.hairline-draw::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--color-reishi);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-fast, 200ms) var(--ease-yhwach, cubic-bezier(0.16, 1, 0.3, 1));
+}
+.hairline-draw:hover::after {
+  transform: scaleX(1);
+}
+
+.bg-obsidian-depth {
+  background-color: #070709;
+}
+
+.bg-charcoal-surface {
+  background-color: #0E0E14;
+}
+
+.bg-card-surface {
+  background-color: #0E0E14;
+}
+
+/* Restrained selection: wine on bone */
+::selection {
+  background-color: #541C42;
+  color: #F5F5F0;
+}
+
+/* Visible keyboard navigation focus ring: 2px reishi with 2px offset */
+:focus-visible {
+  outline: 2px solid #8FD3FF !important;
+  outline-offset: 2px !important;
+}
+
+/* Global motion law: reduced-motion instantaneous transitions */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom restrained scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070709;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e1e28;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #541C42;
+}

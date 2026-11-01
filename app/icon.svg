@@ -1,0 +1,24 @@
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ink #070709 Rounded Square Background -->
+  <rect width="32" height="32" rx="7" fill="#070709" />
+
+  <!-- Monochrome Butterfly Emblem in Bone #F5F5F0 -->
+  <g transform="translate(16, 16) scale(0.075) translate(-200, -112)" fill="#F5F5F0">
+    <!-- Left top & bottom wings -->
+    <path d="M196 99C169 42 91 17 54 43C22 65 44 119 82 132C115 144 157 121 190 113C160 133 137 160 150 181C165 204 191 168 198 137Z" />
+    <!-- Right top & bottom wings -->
+    <path d="M204 99C231 42 309 17 346 43C378 65 356 119 318 132C285 144 243 121 210 113C240 133 263 160 250 181C235 204 209 168 202 137Z" />
+    <!-- Left inner wing membrane facet -->
+    <path d="M195 103C180 72 147 65 126 78C111 88 126 111 150 117C169 122 184 114 195 110Z" opacity="0.45" />
+    <!-- Right inner wing membrane facet -->
+    <path d="M205 103C220 72 253 65 274 78C289 88 274 111 250 117C231 122 216 114 205 110Z" opacity="0.45" />
+    <!-- Left antenna -->
+    <path d="M197 94Q179 57 163 43Q181 46 198 76Z" />
+    <!-- Right antenna -->
+    <path d="M203 94Q221 57 237 43Q219 46 202 76Z" />
+    <!-- Slender body -->
+    <ellipse cx="200" cy="120" rx="5" ry="30" />
+    <!-- Head -->
+    <circle cx="200" cy="86" r="4.5" />
+  </g>
+</svg>
